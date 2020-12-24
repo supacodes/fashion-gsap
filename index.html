@@ -40,7 +40,7 @@
       </ul>
       <!--  -->
 
-      <!-- Home Text -->
+      <!-- Hero Text -->
       <div class="lead-text">
         <h1>O'Bony Collection</h1>
 
@@ -78,6 +78,7 @@
     <script src="js/hover-effect.umd.js"></script>
 
     <script>
+      // Distortion
       new hoverEffect({
         parent: document.querySelector('.distortion'),
         intensity: 0.2,
@@ -85,6 +86,55 @@
         image2: './images/02.png',
         displacementImage: './images/diss.png',
         imagesRatio: 380 / 300,
+      });
+
+      // TweenMax
+
+      TweenMax.staggerFrom(
+        '.social li',
+        1.5,
+        {
+          delay: 1.5,
+          opacity: 0,
+          x: '-20',
+          ease: Expo.easeInOut,
+        },
+        0.08,
+      );
+
+      TweenMax.from('.sponsor', 1.5, {
+        delay: 1.5,
+        opacity: 0,
+        y: '20',
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from('.lead-text h1', 1.5, {
+        delay: 0.5,
+        opacity: 0,
+        y: '20',
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from('.lead-text h2', 1.5, {
+        delay: 1,
+        opacity: 0,
+        x: '1000',
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from('.distortion', 1.5, {
+        delay: 2,
+        opacity: 0,
+        y: '20',
+        ease: Expo.easeInOut,
+      });
+
+      TweenMax.from('.lead-text p', 1.5, {
+        delay: 0.5,
+        opacity: 0,
+        y: '20',
+        ease: Expo.easeInOut,
       });
     </script>
   </body>
