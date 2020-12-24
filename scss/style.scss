@@ -1,2 +1,99 @@
 @import 'variables';
 @import 'reset';
+
+body {
+  font-family: Poppins, sans-serif;
+  max-width: 100%;
+  min-height: 100vh;
+  background: #d8dbe2;
+}
+
+// Nav
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  &__svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lang {
+    margin-right: 2rem;
+    text-transform: uppercase;
+  }
+}
+
+// Media
+.social {
+  transform: rotate(-90deg) translate(-40%, -50%);
+  position: absolute;
+  left: -12.5%;
+  top: 18%;
+  z-index: 10;
+
+  li {
+    display: inline-block;
+    margin-right: 1.5rem;
+  }
+  li a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.5rem;
+  }
+}
+
+// Home Text
+.lead-text {
+  transform: rotate(-90deg) translate(-5%, -50%);
+  position: absolute;
+  left: 13%;
+  width: 40rem;
+  text-align: left;
+  line-height: 1.2;
+
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 0.9;
+    font-weight: 900;
+    z-index: 9;
+    position: relative;
+  }
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: #dac95f;
+    margin-left: 1rem;
+    transform: translateY(-2rem);
+  }
+  p {
+    width: 50%;
+    transform: translateY(-3rem);
+  }
+}
+
+// Sponsors
+.sponsor {
+  width: 20rem;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-90deg);
+  right: 0;
+  text-align: left;
+  p {
+    transform: rotate(90deg) translate(-90%, 180%);
+    position: absolute;
+    font-weight: 800;
+  }
+}
