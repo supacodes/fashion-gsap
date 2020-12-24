@@ -13,6 +13,12 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="overlay">
+        <div class="overlay__child overlay__1" data-delay=".5"></div>
+        <div class="overlay__child overlay__2" data-delay=".7"></div>
+        <div class="overlay__child overlay__3" data-delay=".9"></div>
+      </div>
+
       <!-- Nav -->
       <nav class="navbar">
         <div class="menu">
@@ -96,46 +102,49 @@
         {
           delay: 1.5,
           opacity: 0,
-          x: '-20',
+          x: -20,
           ease: Expo.easeInOut,
         },
         0.08,
       );
 
-      TweenMax.from('.sponsor', 1.5, {
-        delay: 1.5,
+      TweenMax.from('.sponsor, .navbar, .distortion', 1.5, {
+        delay: 2,
         opacity: 0,
-        y: '20',
+        x: -10,
         ease: Expo.easeInOut,
       });
 
       TweenMax.from('.lead-text h1', 1.5, {
         delay: 0.5,
         opacity: 0,
-        y: '20',
+        y: 20,
         ease: Expo.easeInOut,
       });
 
       TweenMax.from('.lead-text h2', 1.5, {
         delay: 1,
         opacity: 0,
-        x: '1000',
-        ease: Expo.easeInOut,
-      });
-
-      TweenMax.from('.distortion', 1.5, {
-        delay: 2,
-        opacity: 0,
-        y: '20',
+        x: 1000,
         ease: Expo.easeInOut,
       });
 
       TweenMax.from('.lead-text p', 1.5, {
         delay: 0.5,
         opacity: 0,
-        y: '20',
+        y: 20,
         ease: Expo.easeInOut,
       });
+
+      [...document.querySelectorAll('.overlay__child')].forEach(
+        ({ dataset }, index) => {
+          TweenMax.to(`.overlay__${index + 1}`, 1.5, {
+            delay: +dataset.delay,
+            top: '-100%',
+            ease: Expo.easeInOut,
+          });
+        },
+      );
     </script>
   </body>
 </html>
